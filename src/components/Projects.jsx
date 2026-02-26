@@ -8,7 +8,7 @@ const projects = [
         title: 'Sarkari Jamay',
         desc: 'High-traffic EdTech platform with 20,000+ users. Features complex quiz interfaces, state persistence, and cross-platform behavior using Capacitor.',
         tech: ['Next.js 16', 'React 19', 'Tailwind', 'Capacitor'],
-        image: 'https://images.unsplash.com/photo-1501504905953-f8c97f33e1f1?auto=format&fit=crop&q=80&w=800',
+        image: '/sarkarijamay-thumb.png',
         live: 'https://sarkarijamay.com',
         github: '#'
     },
@@ -24,7 +24,7 @@ const projects = [
         title: 'Railing World',
         desc: 'Production-ready business website with mobile-first design, interactive inquiry forms, and responsive UI principles.',
         tech: ['React.js', 'React Router', 'CSS3', 'Responsive Design'],
-        image: 'https://images.unsplash.com/photo-1517245318773-b7b83ad931be?auto=format&fit=crop&q=80&w=800',
+        image: '/railingworld-thumb.png',
         live: 'https://railingworld.in',
         github: '#'
     }

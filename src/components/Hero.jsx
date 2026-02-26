@@ -40,7 +40,7 @@ const Hero = () => {
                     {/* Animated SVG text replaces the static h1 */}
                     <HeroTextAnimation />
 
-                    <h3 className="hero-title">Frontend Developer | UI Developer</h3>
+                    <h3 className="hero-title">Frontend Developer | UI Designer</h3>
                     <p className="hero-tagline">
                         Frontend Developer with 2.5 years of professional experience in building
                         scalable, high-performance and user-centric web applications.
