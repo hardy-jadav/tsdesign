@@ -1,19 +1,19 @@
 import React, { useEffect } from 'react';
 import anime from 'animejs';
-import {
-    Code2, Cpu, Globe, Layers, GitBranch, Database, Layout, Smartphone
-} from 'lucide-react';
+import { SiReact, SiNextdotjs, SiVuedotjs, SiTypescript, SiTailwindcss, SiFigma } from 'react-icons/si';
+import { VscAzureDevops } from 'react-icons/vsc';
+import { TbApi } from 'react-icons/tb';
 import './Skills.css';
 
 const skills = [
-    { name: 'React.js', icon: <Code2 size={40} />, desc: 'Hooks, Context, Redux' },
-    { name: 'Next.js', icon: <Globe size={40} />, desc: 'App Router, SSR' },
-    { name: 'VueJS', icon: <Layers size={40} />, desc: 'Quasar Framework' },
-    { name: 'TypeScript', icon: <Cpu size={40} />, desc: 'Type-safe Logic' },
-    { name: 'Tailwind CSS', icon: <Layout size={40} />, desc: 'Shadcn UI' },
-    { name: 'Figma', icon: <Smartphone size={40} />, desc: 'UI/UX Design' },
-    { name: 'REST APIs', icon: <Database size={40} />, desc: 'Axios, Fetch' },
-    { name: 'Azure DevOps', icon: <GitBranch size={40} />, desc: 'CI/CD, Agile' },
+    { name: 'React.js', icon: <SiReact size={40} />, desc: 'Hooks, Context, Redux', color: '#61DAFB' },
+    { name: 'Next.js', icon: <SiNextdotjs size={40} />, desc: 'App Router, SSR', color: '#ffffff' },
+    { name: 'VueJS', icon: <SiVuedotjs size={40} />, desc: 'Quasar Framework', color: '#4FC08D' },
+    { name: 'TypeScript', icon: <SiTypescript size={40} />, desc: 'Type-safe Logic', color: '#3178C6' },
+    { name: 'Tailwind CSS', icon: <SiTailwindcss size={40} />, desc: 'Shadcn UI', color: '#06B6D4' },
+    { name: 'Figma', icon: <SiFigma size={40} />, desc: 'UI/UX Design', color: '#F24E1E' },
+    { name: 'REST APIs', icon: <TbApi size={40} />, desc: 'Axios, Fetch', color: '#00e5ff' },
+    { name: 'Azure DevOps', icon: <VscAzureDevops size={40} />, desc: 'CI/CD, Agile', color: '#0078D7' },
 ];
 
 const Skills = () => {
@@ -54,8 +54,8 @@ const Skills = () => {
                 <h2 className="section-title">My <span className="text-neon">Tech Stack</span></h2>
                 <div className="skills-grid">
                     {skills.map((skill, index) => (
-                        <div key={index} className="skill-card glass interactive">
-                            <div className="skill-icon text-neon">
+                        <div key={index} className="skill-card glass interactive" style={{ "--skill-color": skill.color }}>
+                            <div className="skill-icon">
                                 {skill.icon}
                             </div>
                             <h3>{skill.name}</h3>

@@ -19,19 +19,23 @@
 
 .skill-card:hover {
     transform: translateY(-10px) scale(1.02);
-    border-color: var(--primary-neon);
-    box-shadow: 0 10px 30px rgba(0, 229, 255, 0.2);
+    border-color: var(--skill-color, var(--primary-neon));
+    box-shadow: 0 10px 30px color-mix(in srgb, var(--skill-color, var(--primary-neon)) 20%, transparent);
 }
 
 .skill-icon {
     margin-bottom: 1.5rem;
     display: flex;
     justify-content: center;
-    transition: transform 0.3s ease;
+    color: var(--text-dim);
+    filter: grayscale(100%) opacity(0.7);
+    transition: all 0.3s ease;
 }
 
 .skill-card:hover .skill-icon {
     transform: scale(1.1) rotate(5deg);
+    color: var(--skill-color);
+    filter: grayscale(0%) opacity(1) drop-shadow(0 0 15px var(--skill-color));
 }
 
 .skill-card h3 {
@@ -50,7 +54,7 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(0, 229, 255, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, color-mix(in srgb, var(--skill-color) 15%, transparent) 0%, transparent 70%);
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
