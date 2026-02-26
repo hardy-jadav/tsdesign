@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import anime from 'animejs';
 import { ArrowRight, ChevronDown } from 'lucide-react';
+import HeroTextAnimation from './HeroTextAnimation';
 import './Hero.css';
 
 const Hero = () => {
@@ -13,16 +14,11 @@ const Hero = () => {
         });
 
         tl.add({
-            targets: '.hero-name .char',
-            translateY: [100, 0],
+            targets: '.hero-title',
+            translateY: [20, 0],
             opacity: [0, 1],
-            delay: anime.stagger(50),
+            delay: 800,
         })
-            .add({
-                targets: '.hero-title',
-                translateY: [20, 0],
-                opacity: [0, 1],
-            }, '-=800')
             .add({
                 targets: '.hero-tagline',
                 translateY: [20, 0],
@@ -35,22 +31,15 @@ const Hero = () => {
             }, '-=800');
     }, []);
 
-    const splitText = (text) => {
-        return text.split('').map((char, i) => (
-            <span key={i} className="char" style={{ display: 'inline-block' }}>
-                {char === ' ' ? '\u00A0' : char}
-            </span>
-        ));
-    };
-
     return (
         <section className="hero" id="home">
             <div className="container hero-content" ref={contentRef}>
                 <div className="hero-text-wrapper">
                     <h2 className="hero-greeting text-neon">Hello, I'm</h2>
-                    <h1 className="hero-name">
-                        {splitText('Hardy Jadav')}
-                    </h1>
+
+                    {/* Animated SVG text replaces the static h1 */}
+                    <HeroTextAnimation />
+
                     <h3 className="hero-title">Frontend Developer | UI Developer</h3>
                     <p className="hero-tagline">
                         Frontend Developer with 2.5 years of professional experience in building

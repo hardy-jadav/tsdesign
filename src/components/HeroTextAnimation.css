@@ -1,0 +1,46 @@
+.hero-text-anim-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 1.5rem auto;
+    position: relative;
+}
+
+.hero-text-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    visibility: hidden;
+    overflow: visible;
+}
+
+/* Subtle background glow behind the text */
+.hero-text-anim-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 120%;
+    background: radial-gradient(ellipse at center,
+            rgba(0, 229, 255, 0.08) 0%,
+            rgba(157, 0, 255, 0.04) 40%,
+            transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(30px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-text-anim-container {
+        max-width: 95%;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text-anim-container {
+        max-width: 100%;
+    }
+}
