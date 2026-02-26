@@ -1,0 +1,127 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.hero-text-wrapper {
+    max-width: 800px;
+}
+
+.hero-greeting {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.hero-name {
+    font-size: clamp(3.5rem, 10vw, 6rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.hero-title {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 500;
+    color: var(--text-dim);
+    margin-bottom: 1.5rem;
+}
+
+.hero-tagline {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+}
+
+.hero-ctas {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, var(--primary-neon), var(--secondary-neon));
+    color: black;
+    box-shadow: var(--neon-glow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--neon-purple-glow);
+}
+
+.btn-outline {
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    color: var(--text-main);
+    backdrop-filter: blur(5px);
+}
+
+.btn-outline:hover {
+    background: var(--glass-border);
+    border-color: var(--primary-neon);
+    transform: translateY(-3px);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-dim);
+    opacity: 0.6;
+}
+
+/* Decorative Blobs */
+.hero-blob {
+    position: absolute;
+    filter: blur(80px);
+    z-index: 1;
+    opacity: 0.3;
+}
+
+.blob-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--primary-neon);
+    top: 10%;
+    right: -100px;
+}
+
+.blob-2 {
+    width: 300px;
+    height: 300px;
+    background: var(--secondary-neon);
+    bottom: 10%;
+    left: -50px;
+}
+
+@media (max-width: 768px) {
+    .hero-ctas {
+        flex-direction: column;
+    }
+}

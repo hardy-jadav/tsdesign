@@ -1,0 +1,82 @@
+
+> tsdesign@0.0.0 lint
+> eslint .
+
+
+C:\Users\DeadShot\Desktop\Hardy\PORTFOLIO\tsdesign\src\components\About.jsx
+  12:21  error  Error: Cannot access variable before it is declared
+
+`animateStats` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+  10 |             entries.forEach(entry => {
+  11 |                 if (entry.isIntersecting) {
+> 12 |                     animateStats();
+     |                     ^^^^^^^^^^^^ `animateStats` accessed before it is declared
+  13 |                     animateAbout();
+  14 |                     observer.unobserve(entry.target);
+  15 |                 }
+
+  22 |     }, []);
+  23 |
+> 24 |     const animateStats = () => {
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 25 |         anime({
+     | ^^^^^^^^^^^^^^^
+> 26 |             targets: '.stat-number',
+     | ^^^^^^^^^^^^^^^
+> 27 |             innerHTML: [0, (el) => el.getAttribute('data-target')],
+     | ^^^^^^^^^^^^^^^
+> 28 |             round: 1,
+     | ^^^^^^^^^^^^^^^
+> 29 |             easing: 'easeOutExpo',
+     | ^^^^^^^^^^^^^^^
+> 30 |             duration: 2000,
+     | ^^^^^^^^^^^^^^^
+> 31 |         });
+     | ^^^^^^^^^^^^^^^
+> 32 |     };
+     | ^^^^^^^ `animateStats` is declared here
+  33 |
+  34 |     const animateAbout = () => {
+  35 |         anime({  react-hooks/immutability
+  13:21  error  Error: Cannot access variable before it is declared
+
+`animateAbout` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+  11 |                 if (entry.isIntersecting) {
+  12 |                     animateStats();
+> 13 |                     animateAbout();
+     |                     ^^^^^^^^^^^^ `animateAbout` accessed before it is declared
+  14 |                     observer.unobserve(entry.target);
+  15 |                 }
+  16 |             });
+
+  32 |     };
+  33 |
+> 34 |     const animateAbout = () => {
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 35 |         anime({
+     | ^^^^^^^^^^^^^^^
+> 36 |             targets: '.about-card',
+     | ^^^^^^^^^^^^^^^
+> 37 |             translateY: [50, 0],
+     | ^^^^^^^^^^^^^^^
+> 38 |             opacity: [0, 1],
+     | ^^^^^^^^^^^^^^^
+> 39 |             duration: 1000,
+     | ^^^^^^^^^^^^^^^
+> 40 |             easing: 'easeOutQuad'
+     | ^^^^^^^^^^^^^^^
+> 41 |         });
+     | ^^^^^^^^^^^^^^^
+> 42 |     };
+     | ^^^^^^^ `animateAbout` is declared here
+  43 |
+  44 |     return (
+  45 |         <section id="about" className="about">                                                 react-hooks/immutability
+
+C:\Users\DeadShot\Desktop\Hardy\PORTFOLIO\tsdesign\src\components\ParticleBackground.jsx
+  2:8  error  'anime' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+✖ 3 problems (3 errors, 0 warnings)
+
