@@ -52,8 +52,13 @@
     color: var(--text-main);
 }
 
-.nav-item:hover::after {
+.nav-item:hover::after,
+.nav-item.active::after {
     width: 100%;
+}
+
+.nav-item.active {
+    color: var(--text-main);
 }
 
 .social-links {
@@ -107,6 +112,10 @@
 .mobile-nav-item {
     font-size: 1.2rem;
     font-weight: 600;
+}
+
+.mobile-nav-item.active {
+    color: var(--primary-neon);
 }
 
 @media (max-width: 768px) {
